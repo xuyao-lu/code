@@ -1,0 +1,49 @@
+struct ListNode *readlist()                                                                                                                         
+{
+    struct ListNode *head,*tail,*p;
+    head=(struct ListNode*)malloc(sizeof(struct ListNode));
+    head->next=NULL;
+    tail=head;
+    while(1)
+    {   
+    p=(struct ListNode*)malloc(sizeof(struct ListNode));
+    scanf("%d",&p->data);
+    if(p->data==-1)
+        break;
+    tail->next=p;
+    tail=p;
+    }   
+    tail->next=NULL;
+    return head;
+}
+
+
+
+
+struct ListNode *readlist()
+{
+    struct ListNode *head,*tail,*p;
+    head=tail=NULL;
+    p=(struct ListNode *)malloc(sizeof(struct ListNode));
+    scanf("%d",&p->data);
+
+     while(p->data!=-1)
+    {
+        if(head==NULL)
+        {
+            head=p;
+            head->next=NULL;
+        }
+        if(tail!=NULL)
+        {
+            tail->next=p;
+        }
+        tail=p;
+        tail->next=NULL;
+
+p=(struct ListNode *)malloc(sizeof(struct ListNode));
+scanf("%d",&p->data);
+     }
+     return head;
+}
+
